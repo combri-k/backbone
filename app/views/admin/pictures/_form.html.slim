@@ -1,0 +1,13 @@
+- if @picture.errors.any?
+  p= @picture.errors.full_messages.to_sentence
+
+= form_for([ :admin, @picture ]) do |f|
+  p
+    = f.label :title
+    = f.text_field :title
+  p
+    = f.label :file
+    = f.file_field :file
+  p
+    = f.submit(nil, :class => "btn")
+= link_to(content_tag("i", nil, :class => "icon-remove") + "Cancel", admin_pictures_path, :class => "btn")

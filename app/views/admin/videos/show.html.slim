@@ -1,0 +1,4 @@
+h1 Video #{@video.id}
+- for attrs in Video.attribute_names.zip(@video.attributes.values)
+  p= attrs.join(": ")
+= link_to("Index", admin_videos_path)

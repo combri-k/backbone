@@ -1,0 +1,13 @@
+- if @video.errors.any?
+  p= @video.errors.full_messages.to_sentence
+
+= form_for([ :admin, @video ]) do |f|
+  p
+    = f.label :title
+    = f.text_field :title
+  p
+    = f.label :file
+    = f.file_field :file
+  p
+    = f.submit(nil, :class => "btn")
+= link_to(content_tag("i", nil, :class => "icon-remove") + "Cancel", admin_videos_path, :class => "btn")

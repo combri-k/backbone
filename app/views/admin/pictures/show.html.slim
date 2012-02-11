@@ -1,0 +1,4 @@
+h1 Picture #{@picture.id}
+- for attrs in Picture.attribute_names.zip(@picture.attributes.values)
+  p= attrs.join(": ")
+= link_to("Index", admin_pictures_path)

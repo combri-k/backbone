@@ -1,0 +1,16 @@
+h1 All the pictures
+table.table.table-striped.table-bordered.table-condensed
+  thead
+    tr
+      - for attr in  Picture.attribute_names
+        th= attr.humanize.capitalize
+      th Action
+  tbody
+    - for picture in @pictures
+      tr
+        - for attr in picture.attributes.values
+          td= attr
+        td= link_to("Show", admin_picture_path(picture))
+        td= link_to("Edit", edit_admin_picture_path(picture))
+        td= link_to("Delete", admin_picture_path(picture), :method => :delete, :confirm => "Are you sure?")
+= link_to("New", new_admin_picture_path)

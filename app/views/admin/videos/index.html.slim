@@ -1,0 +1,16 @@
+h1 All the videos
+table.table.table-striped.table-bordered.table-condensed
+  thead
+    tr
+      - for attr in Video.attribute_names
+        th= attr.humanize.capitalize
+      th Action
+  tbody
+    - for video in @videos
+      tr
+        - for attr in video.attributes.values
+          td= attr
+        td= link_to("Show", admin_video_path(video))
+        td= link_to("Edit", edit_admin_video_path(video))
+        td= link_to("Delete", admin_video_path(video), :method => :delete, :confirm => "Are you sure?")
+= link_to("New", new_admin_video_path)
