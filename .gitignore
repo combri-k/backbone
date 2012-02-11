@@ -2,5 +2,5 @@
 /db/*.sqlite3
 /log/*.log
 /tmp
-/app/assets/images
+/app/assets/images/pictures
 /app/assets/videos
