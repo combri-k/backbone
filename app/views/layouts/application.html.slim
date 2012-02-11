@@ -3,7 +3,7 @@ html
   head
     title Backbone
   body
-    = render(:partial => "layouts/navbar", :locals => { :current_path => request.path })
+    = render(:partial => "layouts/navbar")
     .container(style="margin-top:60px;")= yield
 
     / Assets

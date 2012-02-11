@@ -1,7 +1,7 @@
 # Own Addenda
-Backbone.Collection.prototype.resetFrom = (el)->
+Backbone.Collection::resetFrom = (el)->
   @reset $.parseJSON el.html()
-Backbone.Collection.prototype.findBySlug = (slug)->
+Backbone.Collection::findBySlug = (slug)->
   _.find @models || [], (model)-> model.get("slug") == slug
 
 window.Tumbs =
