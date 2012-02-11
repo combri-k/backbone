@@ -1,11 +1,8 @@
 Backbone::Application.routes.draw do
-  resources :totos
-
-  namespace :admin do resources :videos end
-
   root :to => "main#index"
 
-  resources :pictures, :only => [ :show ]
+  # the xhr? checking here is a little bit ugly move it to the controller with a render 404
+  resources :pictures, :only => [ :index, :show ], :constraints => lambda { |request| request.action?("index") ? request.xhr? : true }
 
   namespace :admin do
     root :to => "main#index"
