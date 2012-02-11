@@ -1,3 +1,4 @@
+#dynamic-picture-content
 #pictures
   h1 All the pictures
   ul.thumbnails
@@ -5,7 +6,8 @@
       li.span3
         .thumbnail
           = link_to(image_tag(picture.file.url, :width => 300), picture_path(picture))
-          h5= picture.title
+          h5= link_to(picture.title, "/#/pictures/#{picture.slug}")
+  #json-pictures(style="display:none;")= @pictures.to_json
 #videos
   h1 All the videos
   ul.thumbnails
