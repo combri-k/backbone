@@ -1,4 +1,5 @@
 #= require jquery
+#= require jquery-extensions
 #= require jquery_ujs
 #= require underscore
 #= require backbone

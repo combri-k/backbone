@@ -1,0 +1,15 @@
+<div id="pictures">
+  <h1>All the pictures</h1>
+  <ul class="thumbnails">
+    <% for picture in @pictures: %>
+      <li class="span3">
+        <div class="thumbnail">
+          <a href="<%= "/#/pictures/#{picture.slug}" %>">
+            <img alt="<%= picture.title %>" src="<%= "/assets/pictures/#{picture.file_file_name}" %>" width="300" />
+            <h5><%= picture.title %></h5>
+          </a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

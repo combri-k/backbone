@@ -1,5 +1,5 @@
 # Own Addenda
-Backbone.Collection::resetFrom = (el)->
+Backbone.Collection::resetFromJSON = (el)->
   @reset $.parseJSON el.html()
 Backbone.Collection::findBySlug = (slug)->
   _.find @models || [], (model)-> model.get("slug") == slug

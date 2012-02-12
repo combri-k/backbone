@@ -2,8 +2,8 @@
   .navbar-inner
     .container
       ul.nav
-        li= link_to("Backbone", root_path, :class => "brand")
-        li= link_to("Home", root_path)
+        li= link_to("Backbone", root_path(:anchor => "/"), :class => "brand")
+        li= link_to("Home", root_path(:anchor => "/"))
         li.dropdown
           = dropdown_link("Admin")
           ul.dropdown-menu

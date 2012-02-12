@@ -1,3 +1,5 @@
-<div id="picture-modal">
-  <h1><%= @picture.get "title" %></h1>
+<div id="picture-<%= @picture.slug %>">
+  <h1><%= @picture.title %></h1>
+  <img src="/assets/pictures/<%= @picture.file_file_name %>" width="100%" />
+  <p><a href="/#/">Index</a></p>
 </div>

@@ -4,7 +4,7 @@ html
     title Backbone
   body
     = render(:partial => "layouts/navbar", :locals => { :current_path => request.path })
-    .container(style="margin-top:60px;")= yield
+    #main.container(style="margin-top:60px;")= yield
 
     / Assets
     = stylesheet_link_tag    "application", :media => "all"

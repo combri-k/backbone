@@ -1,18 +1,17 @@
-#dynamic-picture-content
-#pictures
-  h1 All the pictures
-  ul.thumbnails
-    - for picture in @pictures
-      li.span3
-        .thumbnail
-          = link_to(image_tag(picture.file.url, :width => 300), picture_path(picture))
-          h5= link_to(picture.title, "/#/pictures/#{picture.slug}")
-  #json-pictures(style="display:none;")= @pictures.to_json
-#videos
-  h1 All the videos
-  ul.thumbnails
-    - for video in @videos
-      li.span5
-        .thumbnail
-          = video_tag(video.file.url, :width => 460, :controls => true)
-          h5= video.title
+= json_tag(:pictures)
+/#pictures
+/  h1 All the pictures
+/  ul.thumbnails
+/    - for picture in @pictures
+/      li.span3
+/        .thumbnail
+/          = link_to(image_tag(picture.file.url, :width => 300), picture_path(picture))
+/          h5= link_to(picture.title, "/#/pictures/#{picture.slug}")
+/#videos
+/  h1 All the videos
+/  ul.thumbnails
+/    - for video in @videos
+/      li.span5
+/        .thumbnail
+/          = video_tag(video.file.url, :width => 460, :controls => true)
+/          h5= video.title
